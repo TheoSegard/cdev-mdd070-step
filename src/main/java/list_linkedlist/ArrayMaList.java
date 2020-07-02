@@ -1,6 +1,8 @@
 package list_linkedlist;
 
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 public class ArrayMaList implements MaList {
 
@@ -31,8 +33,21 @@ public class ArrayMaList implements MaList {
 
     @Override
     public void add(int position, String valeur) {
-        // TODO
+
+        String[] newTab = new String[this.array.length];
+        for(int i = 0; i < position; i++) {
+
+            newTab[i] = this.array[i];
+        }
+        newTab[position] = valeur;
+        for(int i = position + 1; i < this.array.length; i++)  {
+
+            newTab[i] = this.array[i - 1];
+        }
+
+        this.array = newTab;
     }
+
 
     @Override
     public String get(int position) {
@@ -41,7 +56,12 @@ public class ArrayMaList implements MaList {
 
     @Override
     public Iterator<String> iterator() {
-        // TODO
-        return null;
+        // initializing ArrayList
+        List<String> listeArray = Arrays.asList(this.array);
+
+        // Looping ArrayList using Iterator
+        Iterator it = listeArray.iterator();
+
+        return it;
     }
 }

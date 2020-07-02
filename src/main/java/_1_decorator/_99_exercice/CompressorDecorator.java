@@ -12,16 +12,25 @@ import java.util.zip.InflaterInputStream;
 /**
  * Classe réalisant de la compression.
  */
-public class Compressor {
+public class CompressorDecorator implements DataSource{
 
     private int compLevel = 6;
-
+    
     public int getCompressionLevel() {
         return compLevel;
     }
 
     public void setCompressionLevel(int value) {
         compLevel = value;
+    }
+
+    @Override
+    public void writeData(String data) {
+    }
+
+    @Override
+    public String readData() {
+        return null;
     }
 
     public String compress(String stringData) {
