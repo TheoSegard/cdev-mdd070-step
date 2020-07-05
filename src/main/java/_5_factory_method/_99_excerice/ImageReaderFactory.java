@@ -14,13 +14,13 @@ public class ImageReaderFactory extends ImageUtil{
         this.inputStream = inputStream;
     }
 
-    public Image loadImage() {
+    public ImageReader loadImage() {
         if(getImageType(inputStream).equals(ImageType.GIF)) {
 
-            return new GifReader(inputStream).loadImage();
+            return (ImageReader) new GifReader(inputStream).loadImage();
         } else if(getImageType(inputStream).equals(ImageType.JPEG)){
 
-            return new JpegReader(inputStream).loadImage();
+            return (ImageReader) new JpegReader(inputStream).loadImage();
         }
         return null;
     }

@@ -8,14 +8,14 @@ public class Demo {
 
         WatchEvents watchEvents = new WatchEvents(watch);
 
-        watch.clickA(ClickEvent);
-        watch.clickB(ClickEvent);
+        watchEvents.onClickA("doubleClick");
+        watchEvents.onClickB("doubleClick");
 
-        watch.clickA(ClickEvent);
-        watch.clickB(ClickEvent);
-        watch.clickB(ClickEvent);
+        watchEvents.onClickA("doubleClick");
+        watchEvents.onClickB("doubleClick");
+        watchEvents.onClickB("doubleClick");
 
-        watch.clickA(ClickEvent);
-        watch.clickB(ClickEvent);
+        watchEvents.onClickA("doubleClick");
+        watchEvents.onClickB("doubleClick");
     }
 }
