@@ -1,5 +1,6 @@
 package _6_state._99_exercice;
 
-public interface Button {
-    void onClick();
+public interface Button extends ClickEvent{
+    void onClickA(String typeClick);
+    void onClickB(String typeClick);
 }

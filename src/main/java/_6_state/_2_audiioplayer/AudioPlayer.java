@@ -28,7 +28,6 @@ public class AudioPlayer implements ClickListener {
     /**
      * Commandes
      */
-
     public void play() {
         // ...
     }

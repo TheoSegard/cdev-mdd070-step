@@ -1,9 +1,10 @@
 package _6_state._99_exercice;
 
 import _6_state._2_audiioplayer.ClickEvent;
+import _6_state._99_exercice.ClickListener;
 import _6_state._99_exercice.state.ShowState;
 
-public class Watch {
+public class Watch implements ClickListener {
     private int hours = 0;
     private int minutes = 0;
 
@@ -12,20 +13,14 @@ public class Watch {
     /**
      * opérations élémentaires
      */
-    public void clickLock(_6_state._99_exercice.ClickEvent clickEvent) {
-        state.clickLock(clickEvent);
+    @Override
+    public void clickA(_6_state._99_exercice.ClickEvent clickEvent) {
+        state.clickA(clickEvent);
     }
 
-    public void clickPlay(_6_state._99_exercice.ClickEvent clickEvent) {
-        state.clickPlay(clickEvent);
-    }
-
-    public void clickNext(_6_state._99_exercice.ClickEvent clickEvent) {
-        state.clickNext(clickEvent);
-    }
-
-    public void clickPrevious(ClickEvent clickEvent) {
-        state.clickPrevious(clickEvent);
+    @Override
+    public void clickB(_6_state._99_exercice.ClickEvent clickEvent) {
+        state.clickB(clickEvent);
     }
 
     public void incrementHours() {
@@ -40,31 +35,7 @@ public class Watch {
         System.out.println(hours + ":" + minutes);
     }
 
-    public void clickButton1() {
-        switch (state) {
-            case SHOW:
-                state = State.EDIT_HOURS;
-                break;
-            case EDIT_HOURS:
-                state = State.EDITS_MINUTES;
-                break;
-            case EDITS_MINUTES:
-                state = State.SHOW;
-                break;
-        }
-    }
-
-    public void clickButton2() {
-        switch (state) {
-            case SHOW:
-                // nothing
-                break;
-            case EDIT_HOURS:
-                incrementHours();
-                break;
-            case EDITS_MINUTES:
-                incrementMinutes();
-                break;
-        }
+    public void changeState(StateInterface state){
+        this.state = state;
     }
 }

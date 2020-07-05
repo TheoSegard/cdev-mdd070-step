@@ -1,6 +1,4 @@
-package
-
-import _6_state._99_exercice.ClickEvent;
+package _6_state._2_audiioplayer;
 
 public interface ClickListener {
     void clickLock(ClickEvent clickEvent);
