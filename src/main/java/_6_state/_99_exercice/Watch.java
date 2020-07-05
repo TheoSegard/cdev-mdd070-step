@@ -1,10 +1,32 @@
 package _6_state._99_exercice;
 
+import _6_state._2_audiioplayer.ClickEvent;
+import _6_state._99_exercice.state.ShowState;
+
 public class Watch {
     private int hours = 0;
     private int minutes = 0;
 
-    private State state = State.SHOW;
+    private StateInterface state = new ShowState(this);
+
+    /**
+     * opérations élémentaires
+     */
+    public void clickLock(_6_state._99_exercice.ClickEvent clickEvent) {
+        state.clickLock(clickEvent);
+    }
+
+    public void clickPlay(_6_state._99_exercice.ClickEvent clickEvent) {
+        state.clickPlay(clickEvent);
+    }
+
+    public void clickNext(_6_state._99_exercice.ClickEvent clickEvent) {
+        state.clickNext(clickEvent);
+    }
+
+    public void clickPrevious(ClickEvent clickEvent) {
+        state.clickPrevious(clickEvent);
+    }
 
     public void incrementHours() {
         hours++;

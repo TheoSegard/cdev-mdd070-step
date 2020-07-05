@@ -1,11 +1,6 @@
 package list_linkedlist;
 
-import _2_iterator._2_iterator.Element;
-import _2_iterator._2_iterator._1_world._1_sanspattern.World;
-
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 public class SampleUsage {
 

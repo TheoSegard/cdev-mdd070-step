@@ -1,7 +1,6 @@
 package list_linkedlist;
 
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 public class LinkedMaList implements MaList {
 
@@ -9,15 +8,15 @@ public class LinkedMaList implements MaList {
     private Node last = null;
     private int size = 0;
 
-    public String getValue(){
+    public String getValue() {
         return first.getValeur();
     }
 
-    public String getValueLast(){
+    public String getValueLast() {
         return last.getValeur();
     }
 
-    public String getValue2(){
+    public String getValue2() {
         return first.getNext().getValeur();
     }
 
@@ -87,43 +86,47 @@ public class LinkedMaList implements MaList {
 
     @Override
     public String get(int position) {
-        int i =0;
+        int i = 0;
         Node nodeActual = first;
 
-        if(position < size-1) {
-            while(nodeActual.getNext() != null && i < position) {
+        if (position < size - 1) {
+            while (nodeActual.getNext() != null && i < position) {
 
                 nodeActual = nodeActual.getNext();
             }
 
-        } else if(position == size-1){
+        } else if (position == size - 1) {
             nodeActual = last;
         }
 
         return nodeActual.getValeur();
     }
 
-    @Override
+//    @Override
+//    public Iterator<String> iterator() {
+//        return new Iterator<String>() {
+//
+//            private Node followingNode = first;
+//
+//            @Override
+//            public boolean hasNext() {
+//                return followingNode != null;
+//            }
+//
+//            @Override
+//            public String next() {
+//                if (followingNode == null) {
+//                    throw new NoSuchElementException();
+//                }
+//                String toReturn = followingNode.getValeur();
+//                followingNode = followingNode.getNext();
+//                return toReturn;
+//            }
+//        };
+//    }
+
     public Iterator<String> iterator() {
-        return new Iterator<String>() {
-
-            private Node followingNode = first;
-
-            @Override
-            public boolean hasNext() {
-                return followingNode != null;
-            }
-
-            @Override
-            public String next() {
-                if (followingNode == null) {
-                    throw new NoSuchElementException();
-                }
-                String toReturn = followingNode.getValeur();
-                followingNode = followingNode.getNext();
-                return toReturn;
-            }
-        };
+        return new LinkedListIterator(first);
     }
 
 }

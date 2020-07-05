@@ -20,6 +20,7 @@ public class JpegReader implements ImageReader {
     }
 
     public Image loadImage() {
+        System.out.println("Jpeg");
         // fausse implémentation, inutile de la coder pour l'exercice
         return null;
     }

@@ -2,19 +2,18 @@ package list_linkedlist;
 
 import java.util.Iterator;
 
-class MaListIterator implements Iterator<String> {
+class ArrayListIterator implements Iterator<String> {
 
     private MaList maList;
-
     private int size = 0;
 
-    public MaListIterator(MaList maList) {
+    public ArrayListIterator(MaList maList) {
         this.maList = maList;
     }
 
     //Function for return iterator
     public Iterator getIterator() {
-        return new MaListIterator(maList);
+        return new ArrayListIterator(maList);
     }
     @Override
     public boolean hasNext() {

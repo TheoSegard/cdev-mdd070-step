@@ -1,5 +1,8 @@
 package list_linkedlist;
 
+import _2_iterator._2_iterator.Element;
+import _2_iterator._2_iterator._1_world._2_avecpattern.WorldIterator;
+
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -54,14 +57,21 @@ public class ArrayMaList implements MaList {
         return this.array[position];
     }
 
+//    @Override
+//    public Iterator<String> iterator() {
+//        // initializing ArrayList
+//        List<String> listeArray = Arrays.asList(this.array);
+//
+//        // Looping ArrayList using Iterator
+//        Iterator it = listeArray.iterator();
+//
+//        return it;
+//    }
+
     @Override
     public Iterator<String> iterator() {
-        // initializing ArrayList
-        List<String> listeArray = Arrays.asList(this.array);
-
-        // Looping ArrayList using Iterator
-        Iterator it = listeArray.iterator();
-
-        return it;
+        return new ArrayListIterator(this);
     }
+
+
 }

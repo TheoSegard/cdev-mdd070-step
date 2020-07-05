@@ -20,6 +20,7 @@ public class GifReader implements ImageReader {
     }
 
     public Image loadImage() {
+        System.out.println("Gif");
         // fausse implémentation, inutile de la coder pour l'exercice
         return null;
     }
